@@ -1,0 +1,10 @@
+---
+
+- name: Reload Systemd daemon
+  systemd:
+    daemon_reload: yes
+
+- name: Restart HA-Bridge service
+  service:
+    name: docker.ha-bridge
+    state: restarted

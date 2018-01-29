@@ -1,0 +1,16 @@
+[Unit]
+Description=Docker HA-Bridge Container
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStartPre=-/usr/bin/docker stop %n
+ExecStartPre=-/usr/bin/docker rm %n
+ExecStartPre=/usr/bin/docker pull {{ha_bridge_docker_image_name}}:{{ha_bridge_docker_image_version}}
+ExecStart=/usr/bin/docker run --init --name %n --net=host --volume=/etc/localtime:/etc/localtime:ro --volume=/etc/timezone:/etc/timezone:ro {{ha_bridge_docker_run_options}} {{ha_bridge_docker_image_name}}:{{ha_bridge_docker_image_version}} -Dserver.port={{ha_bridge_http_port}} -Djava.net.preferIPv4Stack=true -Dexec.garden=/ha-bridge/exec -Dsecurity.key={{ha_bridge_security_key}}
+ExecStop=/usr/bin/docker stop %n
+TimeoutStartSec=0
+Restart={{ha_bridge_docker_restart_container}}
+
+[Install]
+WantedBy=multi-user.target
