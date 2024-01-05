@@ -1,10 +1,10 @@
 galaxy_info:
+  role_name: ha_bridge
+  namespace: escalate
   author: Felix Boerner
-  description: Manages ha-bridge Docker container with systemd on Raspbian and Debian OS
-  company: Felix Boerner
+  description: Manage ha-bridge Docker container with systemd on Raspbian and Debian OS
   license: MIT
-  min_ansible_version: 2.4
-  github_branch: master
+  min_ansible_version: "2.4"
   platforms:
    - name: Debian
      versions:
@@ -15,8 +15,9 @@ galaxy_info:
     - raspberry
     - pi
     - raspberrypi
-    - docker
     - systemd
+    - docker
+    - container
     - ha
     - bridge
     - habridge
