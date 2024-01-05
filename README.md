@@ -1,3 +1,5 @@
+[![Tests](https://github.com/escalate/ansible-ha-bridge-docker/actions/workflows/tests.yml/badge.svg?branch=master&event=push)](https://github.com/escalate/ansible-ha-bridge-docker/actions/workflows/tests.yml)
+
 # Ansible Role: ha-bridge-docker
 
 An Ansible role that manages ha-bridge Docker container with systemd on Raspbian and Debian OS.
