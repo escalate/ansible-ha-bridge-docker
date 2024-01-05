@@ -1,5 +1,3 @@
----
-
 ha_bridge_docker_image_version: latest
 ha_bridge_docker_image_name: aptalca/home-automation-bridge
 ha_bridge_docker_run_options: "--volume={{ha_bridge_data_path}}:/ha-bridge/data --volume={{ha_bridge_exec_path}}:/ha-bridge/exec"
