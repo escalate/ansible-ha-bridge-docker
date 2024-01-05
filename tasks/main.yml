@@ -7,13 +7,13 @@
 
 - name: Create HA-Bridge folder structure
   file:
-    path: "{{item}}"
+    path: "{{ item }}"
     state: directory
     owner: root
     group: root
     mode: 0755
   with_items:
-    - "{{ha_bridge_path}}"
+    - "{{ ha_bridge_path }}"
   tags:
     - ha-bridge
 
@@ -43,7 +43,7 @@
 
 - name: Wait for HA-Bridge service startup
   uri:
-    url: "http://localhost:{{ha_bridge_http_port}}/"
+    url: "http://localhost:{{ ha_bridge_http_port }}/"
     status_code: 200
   register: result
   until: result.status == 200
