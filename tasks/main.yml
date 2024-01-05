@@ -37,7 +37,7 @@
   service:
     name: docker.ha-bridge
     state: started
-    enabled: yes
+    enabled: true
   tags:
     - ha-bridge
 
