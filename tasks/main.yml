@@ -1,5 +1,5 @@
 - name: Load HA-Bridge settings for ARMv7 systems
-  include_vars:
+  ansible.builtin.include_vars:
     file: armv7.yml
   when: ansible_architecture == 'armv7l'
 

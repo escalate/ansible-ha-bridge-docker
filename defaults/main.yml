@@ -1,11 +1,11 @@
 ha_bridge_docker_image_version: latest
 ha_bridge_docker_image_name: aptalca/home-automation-bridge
-ha_bridge_docker_run_options: "--volume={{ha_bridge_data_path}}:/ha-bridge/data --volume={{ha_bridge_exec_path}}:/ha-bridge/exec"
+ha_bridge_docker_run_options: "--volume={{ ha_bridge_data_path }}:/ha-bridge/data --volume={{ ha_bridge_exec_path }}:/ha-bridge/exec"
 ha_bridge_docker_restart_container: always
 
 ha_bridge_http_port: 8080
 ha_bridge_security_key: 'secret'
 
 ha_bridge_path: /opt/ha-bridge
-ha_bridge_data_path: "{{ha_bridge_path}}/data"
-ha_bridge_exec_path: "{{ha_bridge_path}}/exec"
+ha_bridge_data_path: "{{ ha_bridge_path }}/data"
+ha_bridge_exec_path: "{{ ha_bridge_path }}/exec"
