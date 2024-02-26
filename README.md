@@ -1,21 +1,8 @@
 [![Test](https://github.com/escalate/ansible-ha-bridge-docker/actions/workflows/test.yml/badge.svg?branch=master&event=push)](https://github.com/escalate/ansible-ha-bridge-docker/actions/workflows/test.yml)
 
-# Ansible Role: ha-bridge-docker
+# Ansible Role: Raspberry - ha-bridge (Docker)
 
-An Ansible role that manages ha-bridge Docker container with systemd on Raspbian and Debian OS.
-
-## Requirements
-
-The Docker daemon should be already installed and running on the host side.
-I recommend using of the Ansible Galaxy role [angstwad.docker_ubuntu](https://github.com/angstwad/docker.ubuntu) to manage the Docker daemon.
-
-This role is tested with Ansible version greater equal 2.4.
-
-## Install
-
-```
-$ ansible-galaxy install escalate.ha-bridge-docker
-```
+An Ansible role that manages [ha-bridge](https://github.com/bwssytems/ha-bridge) Docker container with systemd on Raspberry Pi OS (Debian Bookworm).
 
 ## Role Variables
 
@@ -23,14 +10,24 @@ Please see [defaults/main.yml](https://github.com/escalate/ansible-ha-bridge-doc
 
 ## Dependencies
 
-None
+This role relies on the following dependencies:
+
+* Roles: None
+* Collections: None
+
+## Install
+
+```
+$ ansible-galaxy role install escalate.ha_bridge
+```
 
 ## Example Playbook
 
 ```
 - hosts: all
   roles:
-    - escalate.ha-bridge-docker
+    - role: escalate.ha_bridge
+      tags: habridge
 ```
 
 ## License
