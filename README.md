@@ -3,7 +3,6 @@
 # Ansible Role: ha-bridge-docker
 
 An Ansible role that manages ha-bridge Docker container with systemd on Raspbian and Debian OS.
-This role is compatible with OS version Stretch (9) and Jessie (8).
 
 ## Requirements
 
