@@ -9,7 +9,7 @@
     state: directory
     owner: root
     group: root
-    mode: 0755
+    mode: "0755"
   with_items:
     - "{{ ha_bridge_path }}"
 
@@ -19,7 +19,7 @@
     dest: /etc/systemd/system/docker.ha-bridge.service
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify: Restart HA-Bridge service
 
 - name: Force all notified handlers to run at this point
